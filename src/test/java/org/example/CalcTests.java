@@ -53,6 +53,14 @@ public class CalcTests {
         assertThat(Calc.run("10 + 20 + 30")).isEqualTo(60);
     }
 
+    @Test
+    @DisplayName("10 - 20 + 30 == 20")
+    void t9() {
+        assertThat(Calc.run("10 - 20 + 30")).isEqualTo(20);
+    }
+
+
+
 }
 
 //연산자 중간에는 띄어쓰기를 하는게 좋음 붙어있으면 가독성이 좋지않음

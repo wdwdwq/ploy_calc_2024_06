@@ -2,32 +2,25 @@ package org.example;
 
 public class Calc {
     public static int run(String exp) {
-        boolean needToPlus = exp.contains("+");
-        boolean needToMinus = exp.contains("-");
+        System.out.println(exp); // 입력 주식이 출력된 테스트 케이스에 입력한 수식이 들어간다
 
-        String[] bits = null;
+        exp = exp.replaceAll("- ", "+ -"); // 입력된 수식에서 "- " 인 경우 를 "+ -" 바꾼다는 의미이다
+ // replace를 찾아본다
+        System.out.println(exp);
 
-        if (needToPlus) {
-            bits = exp.split(" \\+ ");
-        } else if (needToMinus) {
-            bits = exp.split(" \\- ");
-        }
-
+        String[] bits = exp.split(" \\+ ");
+//배열을 나눠 "10", "-20", "30"
         int a = Integer.parseInt(bits[0]);
         int b = Integer.parseInt(bits[1]);
         int c = 0;
 
-        if(bits.length > 2){
+        if (bits.length > 2) {
             c = Integer.parseInt(bits[2]); // 항상 받을 필요가 없기 때문에 예외를 만든다
         }
 
-        if (needToPlus) {
-            return a + b + c;
-        } else if (needToMinus) {
-            return a - b - c;
-        }
+        return a + b + c;
 
-        throw new RuntimeException("해석 불가 : 올바른 계산식이 아니야");
+//        throw new RuntimeException("해석 불가 : 올바른 계산식이 아니야");
 
     }
 }

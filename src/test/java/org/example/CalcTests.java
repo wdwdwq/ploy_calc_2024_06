@@ -47,7 +47,13 @@ public class CalcTests {
     void t7() {
         assertThat(Calc.run("100 - 20")).isEqualTo(80);
     }
-    
+    @Test
+    @DisplayName("10 + 20 + 30 == 60")
+    void t8() {
+        assertThat(Calc.run("10 + 20 + 30")).isEqualTo(60);
+    }
+
 }
 
 //연산자 중간에는 띄어쓰기를 하는게 좋음 붙어있으면 가독성이 좋지않음
+// 문제점을 발견하면 끊어서 해결해라
